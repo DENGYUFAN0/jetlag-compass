@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jetlag Compass · 倒时差罗盘</title>
+<meta name="description" content="A science-based jet-lag & circadian re-entrainment planner. Light-timing and sleep schedule to beat jet lag. Runs entirely in your browser.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div>
+      <h1>Jetlag&nbsp;Compass <span class="zh">· 倒时差罗盘</span></h1>
+      <p class="tag" data-i18n="tagline">Beat jet lag with light, not luck — a science-based plan to reset your body clock.</p>
+    </div>
+    <div class="lang-seg" id="langSeg">
+      <button data-lang="en" class="on" onclick="setLang('en')">EN</button>
+      <button data-lang="zh" onclick="setLang('zh')">中</button>
+    </div>
+  </header>
+
+  <p class="privacy" data-i18n="privacy">🔒 All computed in your browser. Nothing is uploaded.</p>
+
+  <section class="card inputs">
+    <div class="grid">
+      <label class="fld"><span data-i18n="lHome">Departing from</span><select id="home"></select></label>
+      <label class="fld"><span data-i18n="lDest">Arriving in</span><select id="dest"></select></label>
+      <label class="fld"><span data-i18n="lBed">Usual bedtime</span><input type="time" id="bed" value="23:00"></label>
+      <label class="fld"><span data-i18n="lWake">Usual wake time</span><input type="time" id="wake" value="07:00"></label>
+      <label class="fld"><span data-i18n="lPre">Prep days before flight</span>
+        <select id="pre"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option></select>
+      </label>
+    </div>
+    <p class="dst-note" data-i18n="dstNote">Offsets are standard time — if a city is on daylight saving, nudge results by ±1h.</p>
+  </section>
+
+  <section class="card hero" id="hero">
+    <div class="hero-num"><b id="r-shift">–</b></div>
+    <p class="hero-sub" id="r-dir">–</p>
+    <p class="hero-flip" id="r-flip" style="display:none"></p>
+    <div class="days-pill"><span data-i18n="daysPre">Full adjustment in about</span> <b id="r-days">–</b> <span data-i18n="daysPost">days</span></div>
+  </section>
+
+  <section class="card" id="preCard" style="display:none">
+    <h2 data-i18n="preTitle">Before you fly</h2>
+    <p id="r-pre" class="pre-text"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="schedTitle">Day-by-day, in destination local time</h2>
+    <p class="hint" data-i18n="schedHint">Shift sleep gradually and time your light. "Bright light" = outdoors or a bright lamp; "dim" = low, warm light and no screens.</p>
+    <div class="table-scroll">
+      <table id="schedTable">
+        <thead><tr>
+          <th data-i18n="thDay">Day</th><th data-i18n="thBed">Sleep</th><th data-i18n="thWake">Wake</th>
+          <th class="get" data-i18n="thGet">☀ Get bright light</th><th class="avoid" data-i18n="thAvoid">🌙 Keep it dim</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card tips">
+    <h2 data-i18n="tipsTitle">Also helps</h2>
+    <ul>
+      <li data-i18n="tip1">On the plane, switch your watch to destination time and sleep/wake by it.</li>
+      <li data-i18n="tip2">Get outside in daylight at the destination — natural light is the strongest signal.</li>
+      <li data-i18n="tip3">Caffeine only in your new morning; avoid alcohol and big meals near your new bedtime.</li>
+      <li data-i18n="tip4">Stay hydrated; short walks beat long naps. Cap naps at ~20 min.</li>
+    </ul>
+    <details>
+      <summary data-i18n="melSum">A note on melatonin</summary>
+      <p class="body" data-i18n="melBody">Some travelers use low-dose (0.5–1 mg) melatonin near the destination bedtime to nudge an advance. Timing and suitability vary by person — treat this as information, not a recommendation, and ask a healthcare professional, especially if you take medication or have a health condition.</p>
+    </details>
+  </section>
+
+  <footer>
+    <span data-i18n="disc">Educational planning aid based on general circadian-rhythm science — not medical advice.</span>
+    <button class="reset" id="resetBtn" data-i18n="reset">Reset</button>
+  </footer>
+</div>
+
+<script src="assets/jetlag.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

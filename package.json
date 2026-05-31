@@ -1,0 +1,15 @@
+{
+  "name": "jetlag-compass",
+  "version": "1.0.0",
+  "description": "A science-based jet-lag & circadian re-entrainment planner. Runs entirely in your browser. 基于昼夜节律科学的倒时差/旅途健康规划,纯浏览器运行。",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "jet-lag", "circadian-rhythm", "travel", "sleep", "wellness",
+    "health", "chronobiology", "calculator", "no-dependencies", "bilingual"
+  ],
+  "license": "MIT",
+  "private": false
+}
