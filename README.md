@@ -1,5 +1,7 @@
 # Jetlag Compass · 倒时差罗盘 ✦
 
+![jetlag-compass — science-based jet-lag & circadian planner](docs/hero.svg)
+
 A **science-based jet-lag planner**. Tell it where you're flying and your sleep habits; it gives you a day-by-day schedule of **when to sleep** and **when to seek or avoid bright light** to reset your body clock as fast as the science allows. Runs entirely in your browser.
 
 > 一个**基于昼夜节律科学**的倒时差规划器。告诉它你从哪飞到哪、平时几点睡,它给你一份逐日计划:**几点睡、何时晒亮光、何时保持昏暗**,用科学允许的最快速度重置生物钟。纯浏览器运行,数据不出本地。
